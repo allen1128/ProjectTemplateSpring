@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>SecYields Application</display-name>
+    
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>/WEB-INF/rootContext.xml</param-value>
+  </context-param>
+  
+  <listener>
+    <listener-class>
+		org.springframework.web.context.ContextLoaderListener
+	</listener-class>
+  </listener>
+  
+  <servlet>
+    <servlet-name>dispatcherServlet</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>/WEB-INF/servletContext.xml</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>dispatcherServlet</servlet-name>
+    <url-pattern>/api/*</url-pattern>
+  </servlet-mapping>
+   
+  <session-config>
+    <session-timeout>30</session-timeout>
+    <cookie-config>
+      <http-only>true</http-only>
+    </cookie-config>
+    <tracking-mode>COOKIE</tracking-mode>
+  </session-config>
+  
+  <servlet-mapping>
+	<servlet-name>default</servlet-name>
+	<url-pattern>*.ico</url-pattern>
+	<url-pattern>*.js</url-pattern>
+	<url-pattern>/app/*</url-pattern>
+	<url-pattern>/css/*</url-pattern>
+	<url-pattern>/lib/*</url-pattern>				
+  </servlet-mapping>
+  
+  <jsp-config>
+    <jsp-property-group>
+        <url-pattern>*.jsp</url-pattern>
+        <url-pattern>*.jspf</url-pattern>
+        <page-encoding>UTF-8</page-encoding>
+        <scripting-invalid>true</scripting-invalid>
+        <trim-directive-whitespaces>true</trim-directive-whitespaces>
+        <default-content-type>text/html</default-content-type>
+    </jsp-property-group>
+  </jsp-config>
+   
+</web-app>
