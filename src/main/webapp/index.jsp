@@ -1,32 +1,22 @@
-<html>
-  <head>
-    <title>Angular 2 QuickStart JS</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/styles.css">
-
-    <!-- 1. Load libraries -->
-    <!-- IE required polyfill -->
-    <script src="lib/core-js/client/shim.min.js"></script>
-
-    <script src="lib/zone.js/dist/zone.js"></script>
-    <script src="lib/reflect-metadata/Reflect.js"></script>
-
-    <script src="lib/rxjs/bundles/Rx.umd.js"></script>
-    <script src="lib/@angular/core/bundles/core.umd.js"></script>
-    <script src="lib/@angular/common/bundles/common.umd.js"></script>
-    <script src="lib/@angular/compiler/bundles/compiler.umd.js"></script>
-    <script src="lib/@angular/platform-browser/bundles/platform-browser.umd.js"></script>
-    <script src="lib/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js"></script>
-
-    <!-- 2. Load our 'modules' -->
-    <script src='app/app.component.js'></script>
-    <script src='app/main.js'></script>
-
-  </head>
-
-  <!-- 3. Display the application -->
-  <body>
-    <my-app>Loading...</my-app>
-  </body>
-
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular Registration</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,100,700,900' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="lib/angular/angular.min.js"></script>
+  <script src="lib/angular/angular-route.min.js"></script>
+  <script src="lib/angular/angular-animate.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controller/registration.js"></script>
+</head>
+<body>
+<header></header>
+<div class="page">
+  <main class="cf" ng-view>
+  </main>
+</div>
+</body>
 </html>

@@ -1,0 +1,5 @@
+projectKey=com:secyield
+serverUrl=http://localhost:9000
+dashboardUrl=http://localhost:9000/dashboard/index/com:secyield
+ceTaskId=AVZi6cH8cfW9ktE5PNOa
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AVZi6cH8cfW9ktE5PNOa

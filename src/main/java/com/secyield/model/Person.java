@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.joda.time.DateTime;
  
 /**
  * Entity bean with JPA annotations
@@ -17,7 +19,22 @@ import javax.persistence.Table;
 @Table(name="Person")
 public class Person {
  
-    @Id
+	public Person(){};
+	
+	public Person(String name, String country) {
+		super();
+		this.name = name;
+		this.country = country;
+	}
+	
+    public Person(String name, String country, DateTime birthday) {
+		super();
+		this.name = name;
+		this.country = country;
+		this.birthday = birthday;
+	}
+
+	@Id
     @Column(name="id")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
@@ -25,6 +42,8 @@ public class Person {
     private String name;
      
     private String country;
+    
+    private DateTime birthday;
  
     public int getId() {
         return id;
@@ -49,8 +68,16 @@ public class Person {
     public void setCountry(String country) {
         this.country = country;
     }
-     
-    @Override
+
+	public DateTime getBirthday() {
+		return birthday;
+	}
+
+	public void setBirthday(DateTime birthday) {
+		this.birthday = birthday;
+	}
+
+	@Override
     public String toString(){
         return "id="+id+", name="+name+", country="+country;
     }

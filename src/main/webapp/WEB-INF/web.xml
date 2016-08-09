@@ -25,7 +25,7 @@
   
   <servlet-mapping>
     <servlet-name>dispatcherServlet</servlet-name>
-    <url-pattern>/api/*</url-pattern>
+    <url-pattern>/</url-pattern>
   </servlet-mapping>
    
   <session-config>
@@ -42,11 +42,11 @@
 	<url-pattern>*.js</url-pattern>
 	<url-pattern>/app/*</url-pattern>
 	<url-pattern>/css/*</url-pattern>
-	<url-pattern>/lib/*</url-pattern>				
+	<url-pattern>/lib/*</url-pattern>						
   </servlet-mapping>
   
   <jsp-config>
-    <jsp-property-group>
+    <jsp-property-group>    
         <url-pattern>*.jsp</url-pattern>
         <url-pattern>*.jspf</url-pattern>
         <page-encoding>UTF-8</page-encoding>

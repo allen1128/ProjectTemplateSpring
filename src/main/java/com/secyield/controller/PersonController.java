@@ -12,6 +12,7 @@ import com.secyield.model.Person;
 import com.secyield.service.PersonService;
 
 @Controller
+@RequestMapping("/api")
 public class PersonController {
 	
 	private PersonService personService;
