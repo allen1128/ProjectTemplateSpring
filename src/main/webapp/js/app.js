@@ -1,13 +1,14 @@
-var myApp = angular.module("myApp", ['ngRoute']);
+var myApp = angular.module("myApp", ['ngRoute', 'firebase'])
+			.constant('FIREBASE_URL', 'https://practiceangular-99c54.firebaseio.com/');
 
 myApp.config(['$routeProvider', function($routeProvider){
 	$routeProvider.
 		when('/login', {
-			templateUrl: 'views/login.html',
+			templateUrl: 'views/login.html', 
 			controller:'registrationController'
 		}).
 		when('/register', {
-			templateUrl: 'views/registration.html',
+			templateUrl: 'views/register.html',
 			controller:'registrationController'
 		}).
 		when('/success', {
