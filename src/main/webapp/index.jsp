@@ -22,9 +22,8 @@
 	  };
 	  firebase.initializeApp(config);
 	  var database = firebase.database();
-	</script>
-  <script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>
-    
+	</script>  
+  <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>    
   <script src="js/app.js"></script>
   <script src="js/service/authentication.js"></script>
   <script src="js/controller/registration.js"></script>
@@ -36,6 +35,10 @@
 <nav class="cf" ng-include="'views/nav.html'"></nav>
 </header>
 <div class="page">
+  <div class="userinfo" ng-show="currentUser" ng-controller="registrationController">
+  	<span class="userinfo">Hi  {{ currentUser.firstname }}</span>
+  	<a ng-href="#/login" ng-click="logout()">logout</a>
+  </div>
   <main class="cf" ng-view>
   </main>
 </div>
