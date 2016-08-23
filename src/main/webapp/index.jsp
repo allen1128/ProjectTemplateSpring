@@ -2,15 +2,15 @@
 <html lang="en" ng-app="myApp">
 <head>
   <meta charset="UTF-8">
-  <title>Angular Registration</title>
+  <title>Angular Data</title>
   <meta name="viewport" content="width=device-width, user-scalable=no">
   <link href='https://fonts.googleapis.com/css?family=Lato:400,100,700,900' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/style.css">
   <script src="lib/angular/angular.min.js"></script>
   <script src="lib/angular/angular-route.min.js"></script>
   <script src="lib/angular/angular-animate.min.js"></script>
-  
-  
+  <script src="lib/underscore-min.js"></script>
+    
   <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
 	<script>
 	  // Initialize Firebase
@@ -27,7 +27,7 @@
   <script src="js/app.js"></script>
   <script src="js/service/authentication.js"></script>
   <script src="js/controller/registration.js"></script>
-  <script src="js/controller/success.js"></script>
+  <script src="js/controller/meetings.js"></script>
   
 </head>
 <body>

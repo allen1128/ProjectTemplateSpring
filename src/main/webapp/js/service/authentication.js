@@ -1,5 +1,5 @@
-myApp.factory('authentication', ['$rootScope', '$firebaseObject', '$firebaseAuth', '$location', 'FIREBASE_URL',
-	function($rootScope, $firebaseObject, $firebaseAuth, $location, firebase_url) {
+myApp.factory('authentication', ['$rootScope', '$firebaseAuth', '$location',
+	function($rootScope, $firebaseAuth, $location) {	
 		var myObject = {
 			login: function(user) {
 				firebase.auth().signInWithEmailAndPassword(
@@ -14,7 +14,7 @@ myApp.factory('authentication', ['$rootScope', '$firebaseObject', '$firebaseAuth
 					} else {
 						$rootScope.currentUser = '';
 					}
-					$location.path("/success");
+					$location.path("/meetings");
 				}).catch(function(error) {
 					$rootScope.message = error.message;
 				});
@@ -49,15 +49,17 @@ myApp.factory('authentication', ['$rootScope', '$firebaseObject', '$firebaseAuth
 
 			requireAuth: function() {
 					firebase.auth().onAuthStateChanged(function(user) {
-						if (!user) {
-							throw "AUTH_REQUIRED";
+						if (!user) {				
+							$rootScope.currentUser = '';
+							$rootScope.message = "Sorry, you must login to access that page";
+							$location.path('/login');							
 						} else {
 							var userRef = firebase.database().ref('users/' + user.uid);
-							userRef.on('value', function(user) {
+							userRef.once('value').then(function(user) {		
 								$rootScope.currentUser = user.val();
 								$rootScope.$apply();
 							});
-						}
+						}						
 					});
 				} // require authentication
 		};

@@ -1,0 +1,31 @@
+<div class="card meetings cf">
+
+  <div class="textintro">
+    <h1>Add a meeting</h1>
+    <p>Type a meeting name and hit +</p>
+  </div>
+  
+   <form class="formgroup addmeeting cf"
+    name="myForm"
+    ng-submit="addMeeting()"
+    novalidate>
+
+    <div class="inputwrapper">
+      <input type="text" name="meetingName"
+      placeholder="Meeting name"
+      ng-model="meetingName" ng-required="true">
+    </div>
+
+    <button type="submit" class="btn"
+      ng-disabled="myForm.$invalid">+</button>    
+      
+  </form>
+  
+  <h2>Your meetings</h2>
+  <div class="meeting" ng-repeat="(key, meeting) in meetings">
+  	<button class="btn btn-delete tooltip" ng-click="deleteMeeting(key)">
+  		<span>Delete this meeting</span>
+  	</button>
+  	<span class="text">{{meeting.name}}</span>
+  </div>  
+</div><!-- meetings cf -->
