@@ -20,6 +20,7 @@ myApp.controller('meetingsController', ['$scope', '$firebaseAuth', '$rootScope',
 			meetingsRef.on('value', function(meetings){
 				$scope.meetings = meetings.val();
 				$rootScope.howManyMeetings = _.size($scope.meetings);
+				$scope.$apply();
 			})
 		}						
 	});	

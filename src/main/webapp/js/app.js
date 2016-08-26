@@ -1,13 +1,22 @@
 var myApp = angular.module("myApp", ['ngRoute', 'firebase']);
 
-myApp.run(['$rootScope', '$location', function($rootScope, $location) {
-	$rootScope.$on('$routeChangeError', function(event, next, previous, error) {
-		if (error === 'AUTH_REQUIRED') {
-			$rootScope.message = "Sorry, you must login to access that page";
-			$location.path('/login');
-		}
-	});
-}]); 
+myApp.run(['$rootScope', function($rootScope) {
+	firebase.auth().onAuthStateChanged(function(user) {
+		if (user) {
+			var userRef = firebase.database().ref('users/' + user.uid);
+			var uid = user.uid;
+			userRef.once('value').then(function(user) {
+				$rootScope.$apply(function(){
+					$rootScope.currentUser = user.val();
+					$rootScope.currentUser.uid = uid;
+				});
+			});
+			$rootScope.message = '';
+			}						
+		});
+   }]); //run
+
+
 
 myApp.config(['$routeProvider', function($routeProvider) {
 	$routeProvider.
@@ -27,6 +36,14 @@ myApp.config(['$routeProvider', function($routeProvider) {
 					return authentication.requireAuth();
 				}
 			}
+		}).
+		when('/checkins/:uId/:mId', {
+			templateUrl: 'views/checkins.html',
+			controller: 'checkInsController'
+		}).
+		when('/checkins/:uId/:mId/checkinslist', {
+			templateUrl: 'views/checkinslist.html',
+			controller: 'checkInsController'
 		}).
 		otherwise({
 			redirectTo: '/login'

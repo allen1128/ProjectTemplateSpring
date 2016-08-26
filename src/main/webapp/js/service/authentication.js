@@ -14,7 +14,9 @@ myApp.factory('authentication', ['$rootScope', '$firebaseAuth', '$location',
 					} else {
 						$rootScope.currentUser = '';
 					}
-					$location.path("/meetings");
+					$rootScope.$apply(function(){
+						$location.path("/meetings");
+					});
 				}).catch(function(error) {
 					$rootScope.message = error.message;
 				});
@@ -51,15 +53,11 @@ myApp.factory('authentication', ['$rootScope', '$firebaseAuth', '$location',
 					firebase.auth().onAuthStateChanged(function(user) {
 						if (!user) {				
 							$rootScope.currentUser = '';
-							$rootScope.message = "Sorry, you must login to access that page";
-							$location.path('/login');							
-						} else {
-							var userRef = firebase.database().ref('users/' + user.uid);
-							userRef.once('value').then(function(user) {		
-								$rootScope.currentUser = user.val();
-								$rootScope.$apply();
+							$rootScope.message = 'Sorry, you must login to access that page';
+							$rootScope.$apply(function(){
+								$location.path('/login');
 							});
-						}						
+						}				
 					});
 				} // require authentication
 		};

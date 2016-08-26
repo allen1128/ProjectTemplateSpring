@@ -28,6 +28,7 @@
   <script src="js/service/authentication.js"></script>
   <script src="js/controller/registration.js"></script>
   <script src="js/controller/meetings.js"></script>
+  <script src="js/controller/checkins.js"></script>
   
 </head>
 <body>
