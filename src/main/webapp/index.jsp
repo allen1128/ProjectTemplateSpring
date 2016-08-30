@@ -7,9 +7,9 @@
   <link href='https://fonts.googleapis.com/css?family=Lato:400,100,700,900' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/style.css">
   <script src="lib/angular/angular.min.js"></script>
-  <script src="lib/angular/angular-route.min.js"></script>
-  <script src="lib/angular/angular-animate.min.js"></script>
-  <script src="lib/underscore-min.js"></script>
+  <script src="lib/angular-route/angular-route.min.js"></script>
+  <script src="lib/angular-animate/angular-animate.min.js"></script>
+  <script src="lib/underscore/underscore-min.js"></script>
     
   <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
 	<script>

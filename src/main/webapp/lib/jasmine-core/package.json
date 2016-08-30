@@ -4,7 +4,7 @@
   "version": "2.4.1",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jasmine/jasmine.git"
+    "url": "https://github.com/jasmine/jasmine.git"
   },
   "keywords": [
     "test",
@@ -13,7 +13,7 @@
     "bdd"
   ],
   "scripts": {
-    "test": "grunt jshint execSpecsInNode"
+    "test": "./node_modules/.bin/grunt jshint execSpecsInNode"
   },
   "description": "Official packaging of Jasmine's core files for use by Node.js projects.",
   "homepage": "http://jasmine.github.io",
@@ -30,34 +30,5 @@
     "load-grunt-tasks": "^0.4.0",
     "shelljs": "~0.1.4",
     "temp": "~0.8.1"
-  },
-  "gitHead": "a95c2cfe3f80921ec6bc061d5fcc0b2368586666",
-  "bugs": {
-    "url": "https://github.com/jasmine/jasmine/issues"
-  },
-  "_id": "jasmine-core@2.4.1",
-  "_shasum": "6f83ab3a0f16951722ce07d206c773d57cc838be",
-  "_from": "jasmine-core@*",
-  "_npmVersion": "2.12.1",
-  "_nodeVersion": "0.12.7",
-  "_npmUser": {
-    "name": "slackersoft",
-    "email": "gregg@slackersoft.net"
-  },
-  "maintainers": [
-    {
-      "name": "dwfrank",
-      "email": "dwfrank@pivotallabs.com"
-    },
-    {
-      "name": "slackersoft",
-      "email": "gregg@slackersoft.net"
-    }
-  ],
-  "dist": {
-    "shasum": "6f83ab3a0f16951722ce07d206c773d57cc838be",
-    "tarball": "https://registry.npmjs.org/jasmine-core/-/jasmine-core-2.4.1.tgz"
-  },
-  "directories": {},
-  "_resolved": "https://registry.npmjs.org/jasmine-core/-/jasmine-core-2.4.1.tgz"
+  }
 }

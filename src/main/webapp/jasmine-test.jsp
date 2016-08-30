@@ -13,7 +13,7 @@
     
     <!-- Angular dependencies -->
     <script src="lib/angular/angular.min.js"></script>
-  	<script src="lib/angular/angular-route.min.js"></script>  
+  	<script src="lib/angular-route/angular-route.min.js"></script>  
     <script src="lib/angular-mocks/angular-mocks.js"></script>    
     
     <!-- Tests + Jasmine Bootstrap -->
